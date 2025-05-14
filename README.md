@@ -1,54 +1,83 @@
-# React + TypeScript + Vite
+# Fullstack REST API Node.js + TypeScript + React (PERN Stack)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación fullstack que utiliza el stack PERN (PostgreSQL, Express, React, Node.js) con TypeScript en el backend y frontend. Permite la administración de productos mediante una API REST y una interfaz web moderna.
 
-Currently, two official plugins are available:
+## Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Backend**: Node.js, Express, TypeScript, Sequelize, PostgreSQL
+- **Frontend**: React, TypeScript, Vite, TailwindCSS, React Router
+- **API REST**: CRUD de productos
+- **Validaciones**: Middleware y validaciones en el backend
+- **Documentación**: Swagger UI para la API
+- **Testing**: Jest para pruebas y cobertura
+- **Hot Reload**: Vite y nodemon para desarrollo ágil
 
-## Expanding the ESLint configuration
+## Estructura del Proyecto
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+├── client/         # Frontend React + Vite
+│   ├── src/
+│   │   ├── components/
+│   │   ├── layouts/
+│   │   ├── services/
+│   │   ├── types/
+│   │   ├── utils/
+│   │   ├── views/
+│   │   ├── main.tsx
+│   │   ├── router.tsx
+│   │   └── ...
+│   ├── public/
+│   ├── index.html
+│   ├── ...
+|   ├ README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Instalación
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 1. Clona el repositorio
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```sh
+git clone https://github.com/kevirui/rest_apis_typescript_frontend.git
+cd fullstack-rest_api_node_ts
 ```
+
+### 2. Configura las variables de entorno
+
+- Copia `.env.example` a `.env` en `server/` y configura tus credenciales de PostgreSQL.
+- Copia `.env.local.example` a `.env.local` en `client/` si es necesario.
+
+### 3. Instala dependencias
+
+#### Frontend
+
+```sh
+cd ../client
+npm install
+```
+
+## Uso
+
+### Levantar el frontend
+
+```sh
+cd client
+npm run dev
+```
+
+La app estará disponible en `http://localhost:5173` (o el puerto que configures).
+
+## Scripts útiles
+
+### Frontend
+
+- `npm run dev` - Inicia la app en modo desarrollo
+- `npm run build` - Compila la app para producción
+- `npm run lint` - Linting del código
+
+## Licencia
+
+MIT
+
+---
+
+Desarrollado por Kevin Agustin Ruiz
